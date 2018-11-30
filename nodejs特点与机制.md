@@ -74,8 +74,8 @@ Check Queue - 检查队列
 Close Queue - guangbi 队列
 
 微观事件
-MircoTask Queue
-NextTick Queue
+MircoTask Queue  - 浏览器和nodejs共有的微任务（micro task）
+NextTick Queue  - node的 process.nextTick
 ```
 
 宏观队列也有执行顺序（从上到下循环）：
