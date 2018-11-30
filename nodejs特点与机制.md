@@ -110,6 +110,45 @@ NextTick Queue
    └───────────────────────┘
 ```
 
-示例图片：<img src="" />
+示例图片：<img src="https://github.com/HanLess/nodejs-analysis/blob/master/nodejs-event-loop.png" />
+
+示例代码：
+
+```
+// 清空TimerQueue
+setTimeout(...）  
+// 清空该进程中的微任务
+// then1位置的Promise先进入任务队列
+Promise.resolve().then(()=>{ 
+   console.log('then1'); // then1
+});
+Promise.resolve().then(()=>{
+    console.log('then2'); // then2
+})
+// 接着进入IO队列
+fs.readFile(...)
+// 优先清空IO队列的NextTick Queue
+process.nextTick(function(){
+   console.log('nextTick') // nextTick
+})
+// 清空micro queue
+setImmediate(()=>{
+   console.log('setImmediate')//setImmediate
+});
+
+
+/*
+执行顺序：
+setTimeout
+Promise.resolve().then
+fs.readFile
+
+输出：
+then1
+then2
+nextTick
+setImmediate
+*/
+```
 
 
