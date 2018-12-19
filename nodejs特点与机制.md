@@ -112,7 +112,7 @@ NextTick Queue  - node的 process.nextTick
 
 示例图片：
 
-<img src="https://github.com/HanLess/nodejs-analysis/blob/master/nodejs-event-loop.png" />
+<img src="https://github.com/HanLess/nodejs-analysis/blob/master/img/nodejs-event-loop.png" />
 
 示例代码：
 
