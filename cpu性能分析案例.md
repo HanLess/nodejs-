@@ -4,6 +4,10 @@
 
 ### 性能报告查看工具：chrome -> 右上角三个点的 -> more tools -> javascript profiler
 
+javascript profiler self time：此方法执行占用的时间
+
+javascript profiler total time：此方法执行 和 它调用的方法执行，共占用的时间
+
 当发现 cpu 使用率过高后，可以使用 v8-profiler-node8 来进行运行报告的生成，示例代码如下
 
 ```
